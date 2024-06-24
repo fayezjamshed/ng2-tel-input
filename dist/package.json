@@ -1,6 +1,6 @@
 {
   "name": "@fayezjamshed/ng2-tel-input",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "An Angular 2 wrapper for intl-tel-input library",
   "main": "./bundles/ng2-tel-input.umd.min.js",
   "scripts": {},
@@ -24,7 +24,7 @@
     "@angular/core": "^13 || ^14 || ^15 || ^16"
   },
   "dependencies": {
-    "intl-tel-input": "^16.0.0"
+    "intl-tel-input": "^17.0.21"
   },
   "module": "./esm5/ng2-tel-input.js",
   "es2015": "./esm2015/ng2-tel-input.js",

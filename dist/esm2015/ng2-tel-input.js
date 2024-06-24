@@ -1,15 +1,16 @@
-import { EventEmitter, Directive, ElementRef, Inject, PLATFORM_ID, Input, Output, HostListener, NgModule } from '@angular/core';
+import { EventEmitter, ɵɵdirectiveInject, ElementRef, PLATFORM_ID, ɵɵdefineDirective, ɵɵlistener, ɵsetClassMetadata, Directive, Inject, Input, Output, HostListener, ɵɵdefineNgModule, ɵɵdefineInjector, NgModule, ɵɵsetNgModuleScope } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 /**
  * @fileoverview added by tsickle
  * Generated from: src/ng2-tel-input.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,const,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode}
  */
 /** @type {?} */
 const defaultUtilScript = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.1/js/utils.js';
 class Ng2TelInput {
     /**
+     * @public
      * @param {?} el
      * @param {?} platformId
      */
@@ -23,11 +24,12 @@ class Ng2TelInput {
         this.intlTelInputObject = new EventEmitter();
     }
     /**
+     * @public
      * @return {?}
      */
     ngOnInit() {
         if (isPlatformBrowser(this.platformId)) {
-            this.ng2TelInputOptions = Object.assign({}, this.ng2TelInputOptions, { utilsScript: this.getUtilsScript(this.ng2TelInputOptions) });
+            this.ng2TelInputOptions = Object.assign(Object.assign({}, this.ng2TelInputOptions), { utilsScript: this.getUtilsScript(this.ng2TelInputOptions) });
             this.ngTelInput = window.intlTelInput(this.el.nativeElement, Object.assign({}, this.ng2TelInputOptions));
             this.el.nativeElement.addEventListener("countrychange", (/**
              * @return {?}
@@ -39,6 +41,7 @@ class Ng2TelInput {
         }
     }
     /**
+     * @public
      * @return {?}
      */
     onBlur() {
@@ -55,12 +58,14 @@ class Ng2TelInput {
         }
     }
     /**
+     * @public
      * @return {?}
      */
     isInputValid() {
         return this.ngTelInput.isValidNumber();
     }
     /**
+     * @public
      * @param {?} country
      * @return {?}
      */
@@ -68,6 +73,7 @@ class Ng2TelInput {
         this.ngTelInput.setCountry(country);
     }
     /**
+     * @public
      * @param {?} options
      * @return {?}
      */
@@ -75,32 +81,46 @@ class Ng2TelInput {
         return options.utilsScript || defaultUtilScript;
     }
 }
-Ng2TelInput.decorators = [
-    { type: Directive, args: [{
+/** @nocollapse */ Ng2TelInput.ɵfac = function Ng2TelInput_Factory(t) { return new (t || Ng2TelInput)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(PLATFORM_ID)); };
+/** @nocollapse */ Ng2TelInput.ɵdir = /** @pureOrBreakMyCode */ ɵɵdefineDirective({ type: Ng2TelInput, selectors: [["", "ng2TelInput", ""]], hostBindings: function Ng2TelInput_HostBindings(rf, ctx) { if (rf & 1) {
+        ɵɵlistener("blur", function Ng2TelInput_blur_HostBindingHandler() { return ctx.onBlur(); });
+    } }, inputs: { ng2TelInputOptions: "ng2TelInputOptions" }, outputs: { hasError: "hasError", ng2TelOutput: "ng2TelOutput", countryChange: "countryChange", intlTelInputObject: "intlTelInputObject" } });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(Ng2TelInput, [{
+        type: Directive,
+        args: [{
                 selector: '[ng2TelInput]',
-            },] },
-];
-/** @nocollapse */
-Ng2TelInput.ctorParameters = () => [
-    { type: ElementRef },
-    { type: String, decorators: [{ type: Inject, args: [PLATFORM_ID,] }] }
-];
-Ng2TelInput.propDecorators = {
-    ng2TelInputOptions: [{ type: Input, args: ['ng2TelInputOptions',] }],
-    hasError: [{ type: Output, args: ['hasError',] }],
-    ng2TelOutput: [{ type: Output, args: ['ng2TelOutput',] }],
-    countryChange: [{ type: Output, args: ['countryChange',] }],
-    intlTelInputObject: [{ type: Output, args: ['intlTelInputObject',] }],
-    onBlur: [{ type: HostListener, args: ['blur',] }]
-};
+            }]
+    }], function () { return [{ type: ElementRef }, { type: undefined, decorators: [{
+                type: Inject,
+                args: [PLATFORM_ID]
+            }] }]; }, { ng2TelInputOptions: [{
+            type: Input,
+            args: ['ng2TelInputOptions']
+        }], hasError: [{
+            type: Output,
+            args: ['hasError']
+        }], ng2TelOutput: [{
+            type: Output,
+            args: ['ng2TelOutput']
+        }], countryChange: [{
+            type: Output,
+            args: ['countryChange']
+        }], intlTelInputObject: [{
+            type: Output,
+            args: ['intlTelInputObject']
+        }], onBlur: [{
+            type: HostListener,
+            args: ['blur']
+        }] }); })();
 
 /**
  * @fileoverview added by tsickle
  * Generated from: src/ng2-tel-input.module.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,const,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode}
  */
 class Ng2TelInputModule {
     /**
+     * @public
      * @return {?}
      */
     static forRoot() {
@@ -110,11 +130,16 @@ class Ng2TelInputModule {
         };
     }
 }
-Ng2TelInputModule.decorators = [
-    { type: NgModule, args: [{
+/** @nocollapse */ Ng2TelInputModule.ɵfac = function Ng2TelInputModule_Factory(t) { return new (t || Ng2TelInputModule)(); };
+/** @nocollapse */ Ng2TelInputModule.ɵmod = /** @pureOrBreakMyCode */ ɵɵdefineNgModule({ type: Ng2TelInputModule });
+/** @nocollapse */ Ng2TelInputModule.ɵinj = /** @pureOrBreakMyCode */ ɵɵdefineInjector({});
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(Ng2TelInputModule, [{
+        type: NgModule,
+        args: [{
                 declarations: [Ng2TelInput],
                 exports: [Ng2TelInput]
-            },] },
-];
+            }]
+    }], null, null); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(Ng2TelInputModule, { declarations: [Ng2TelInput], exports: [Ng2TelInput] }); })();
 
 export { Ng2TelInput, Ng2TelInputModule };
