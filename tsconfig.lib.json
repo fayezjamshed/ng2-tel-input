@@ -6,7 +6,7 @@
       "declarationMap": true,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "target": "es2015",
+      "target": "es2022",
       "module": "esnext",
       "strict": true,
       "skipLibCheck": true,

@@ -2,8 +2,8 @@
     "compilerOptions": {
       "noImplicitAny": true,
       "module": "esnext",
-      "lib": ["es2015", "dom"],
-      "target": "es2015",
+      "lib": ["es2022", "dom"],
+      "target": "es2022",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true,

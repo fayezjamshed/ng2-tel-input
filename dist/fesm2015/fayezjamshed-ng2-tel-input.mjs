@@ -4,27 +4,19 @@ import { isPlatformBrowser } from '@angular/common';
 
 const defaultUtilScript = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.1/js/utils.js';
 class Ng2TelInput {
-    el;
-    platformId;
-    ng2TelInputOptions = {};
-    hasError = new EventEmitter();
-    ng2TelOutput = new EventEmitter();
-    countryChange = new EventEmitter();
-    intlTelInputObject = new EventEmitter();
-    ngTelInput;
     constructor(el, platformId) {
         this.el = el;
         this.platformId = platformId;
+        this.ng2TelInputOptions = {};
+        this.hasError = new EventEmitter();
+        this.ng2TelOutput = new EventEmitter();
+        this.countryChange = new EventEmitter();
+        this.intlTelInputObject = new EventEmitter();
     }
     ngOnInit() {
         if (isPlatformBrowser(this.platformId)) {
-            this.ng2TelInputOptions = {
-                ...this.ng2TelInputOptions,
-                utilsScript: this.getUtilsScript(this.ng2TelInputOptions)
-            };
-            this.ngTelInput = window.intlTelInput(this.el.nativeElement, {
-                ...this.ng2TelInputOptions
-            });
+            this.ng2TelInputOptions = Object.assign(Object.assign({}, this.ng2TelInputOptions), { utilsScript: this.getUtilsScript(this.ng2TelInputOptions) });
+            this.ngTelInput = window.intlTelInput(this.el.nativeElement, Object.assign({}, this.ng2TelInputOptions));
             this.el.nativeElement.addEventListener("countrychange", () => {
                 this.countryChange.emit(this.ngTelInput.getSelectedCountryData());
             });
@@ -51,18 +43,20 @@ class Ng2TelInput {
     getUtilsScript(options) {
         return options.utilsScript || defaultUtilScript;
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.5", ngImport: i0, type: Ng2TelInput, deps: [{ token: i0.ElementRef }, { token: PLATFORM_ID }], target: i0.ɵɵFactoryTarget.Directive });
-    static ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "18.0.5", type: Ng2TelInput, selector: "[ng2TelInput]", inputs: { ng2TelInputOptions: "ng2TelInputOptions" }, outputs: { hasError: "hasError", ng2TelOutput: "ng2TelOutput", countryChange: "countryChange", intlTelInputObject: "intlTelInputObject" }, host: { listeners: { "blur": "onBlur()" } }, ngImport: i0 });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.5", ngImport: i0, type: Ng2TelInput, decorators: [{
+Ng2TelInput.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: Ng2TelInput, deps: [{ token: i0.ElementRef }, { token: PLATFORM_ID }], target: i0.ɵɵFactoryTarget.Directive });
+Ng2TelInput.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.3.0", type: Ng2TelInput, selector: "[ng2TelInput]", inputs: { ng2TelInputOptions: "ng2TelInputOptions" }, outputs: { hasError: "hasError", ng2TelOutput: "ng2TelOutput", countryChange: "countryChange", intlTelInputObject: "intlTelInputObject" }, host: { listeners: { "blur": "onBlur()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: Ng2TelInput, decorators: [{
             type: Directive,
             args: [{
                     selector: '[ng2TelInput]',
                 }]
-        }], ctorParameters: () => [{ type: i0.ElementRef }, { type: undefined, decorators: [{
-                    type: Inject,
-                    args: [PLATFORM_ID]
-                }] }], propDecorators: { ng2TelInputOptions: [{
+        }], ctorParameters: function () {
+        return [{ type: i0.ElementRef }, { type: undefined, decorators: [{
+                        type: Inject,
+                        args: [PLATFORM_ID]
+                    }] }];
+    }, propDecorators: { ng2TelInputOptions: [{
                 type: Input,
                 args: ['ng2TelInputOptions']
             }], hasError: [{
@@ -89,11 +83,11 @@ class Ng2TelInputModule {
             providers: []
         };
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.5", ngImport: i0, type: Ng2TelInputModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-    static ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "18.0.5", ngImport: i0, type: Ng2TelInputModule, declarations: [Ng2TelInput], exports: [Ng2TelInput] });
-    static ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "18.0.5", ngImport: i0, type: Ng2TelInputModule });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.5", ngImport: i0, type: Ng2TelInputModule, decorators: [{
+Ng2TelInputModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: Ng2TelInputModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+Ng2TelInputModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "14.3.0", ngImport: i0, type: Ng2TelInputModule, declarations: [Ng2TelInput], exports: [Ng2TelInput] });
+Ng2TelInputModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: Ng2TelInputModule });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: Ng2TelInputModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [Ng2TelInput],
