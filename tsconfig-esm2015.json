@@ -24,5 +24,6 @@
         "skipTemplateCodegen": true,
         "flatModuleOutFile": "ng2-tel-input.js",
         "flatModuleId": "ng2-tel-input",
+        "enableIvy": true
     }
 }

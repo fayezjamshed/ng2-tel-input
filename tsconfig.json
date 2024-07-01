@@ -3,11 +3,14 @@
         "noImplicitAny": true,
         "module": "commonjs",
         "lib": [ "es2015", "dom" ],
-        "target": "ES5",
+        "target": "es2015",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
         "declaration": true
+    },
+    "angularCompilerOptions": {
+    "enableIvy": true
     },
     "exclude": [
         "node_modules"
