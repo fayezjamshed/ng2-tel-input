@@ -1,0 +1,30 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "outDir": "./dist",
+      "declaration": true,
+      "declarationMap": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "target": "es2015",
+      "module": "esnext",
+      "strict": true,
+      "skipLibCheck": true,
+      "stripInternal": true
+    },
+    "angularCompilerOptions": {
+      "annotateForClosureCompiler": true,
+      "skipTemplateCodegen": true,
+      "strictMetadataEmit": true,
+      "strictInjectionParameters": true,
+      "fullTemplateTypeCheck": true,
+      "enableResourceInlining": true
+    },
+    "exclude": [
+      "src/test.ts",
+      "**/*.spec.ts",
+      "node_modules",
+      "dist"
+    ]
+  }
+  

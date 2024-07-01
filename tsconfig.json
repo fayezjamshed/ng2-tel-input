@@ -1,18 +1,21 @@
 {
     "compilerOptions": {
-        "noImplicitAny": true,
-        "module": "commonjs",
-        "lib": [ "es2015", "dom" ],
-        "target": "es2015",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "sourceMap": true,
-        "declaration": true
+      "noImplicitAny": true,
+      "module": "esnext",
+      "lib": ["es2015", "dom"],
+      "target": "es2015",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "declaration": false,  // Declarations will be handled in tsconfig.lib.json
+      "outDir": "./dist"
     },
     "angularCompilerOptions": {
-    "enableIvy": true
+      "enableIvy": true
     },
     "exclude": [
-        "node_modules"
+      "node_modules",
+      "dist"
     ]
-}
+  }
+  

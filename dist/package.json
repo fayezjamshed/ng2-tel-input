@@ -2,8 +2,7 @@
   "name": "@fayezjamshed/ng2-tel-input",
   "version": "3.0.4",
   "description": "An Angular 2 wrapper for intl-tel-input library",
-  "main": "./bundles/ng2-tel-input.umd.min.js",
-  "scripts": {},
+  "main": "ng2-tel-input.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gauravsoni119/ng2-tel-input.git"
@@ -19,14 +18,30 @@
     "url": "git+https://github.com/gauravsoni119/ng2-tel-input.git"
   },
   "homepage": "https://github.com/gauravsoni119/ng2-tel-input#readme",
-  "devDependencies": {},
   "peerDependencies": {
-    "@angular/core": "^13 || ^14 || ^15 || ^16"
-  },
-  "dependencies": {
+    "@angular/core": "^13 || ^14 || ^15 || ^16",
     "intl-tel-input": "^17.0.21"
   },
-  "module": "./esm5/ng2-tel-input.js",
-  "es2015": "./esm2015/ng2-tel-input.js",
-  "typings": "./ng2-tel-input.d.ts"
+  "config": {
+    "allowedNonPeerDependencies": [
+      "intl-tel-input"
+    ]
+  },
+  "module": "fesm2022/fayezjamshed-ng2-tel-input.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/fayezjamshed-ng2-tel-input.mjs",
+      "esm": "./esm2022/fayezjamshed-ng2-tel-input.mjs",
+      "default": "./fesm2022/fayezjamshed-ng2-tel-input.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
 }
